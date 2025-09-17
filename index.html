@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti, Isabella 💌</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fondo con partículas y orbes de brillo -->
+    <div class="particles">
+        <div class="glowing-orb pink"></div>
+        <div class="glowing-orb blue"></div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <main class="main-container">
+        <header class="header">
+            <h1>Para ti, Isabella 💌</h1>
+            <p class="subtitle">Una pequeña carta donde quiero  decirte lo mucho que  te  extraño.</p>
+        </header>
+
+        <!-- Sobre cerrado con contenedor interactivo -->
+        <div class="envelope-container">
+            <div id="envelope" class="envelope">
+                <div class="envelope-body">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-pocket"></div>
+                    <div class="letter-peek">
+                        <span class="letter-text">Para mi amor</span>
+                    </div>
+                    <div class="envelope-seal">
+                        <span class="seal-heart">💖</span>
+                    </div>
+                </div>
+                <div class="envelope-shadow"></div>
+            </div>
+        </div>
+
+        <!-- Álbum de fotos -->
+        <section id="album" class="album hidden">
+            <div class="album-header">
+                <h2 class="album-title">Isa....</h2>
+                <div class="album-controls">
+                    <button id="prevBtn" class="control-btn">‹</button>
+                    <button id="playBtn" class="control-btn play">▶</button>
+                    <button id="nextBtn" class="control-btn">›</button>
+                </div>
+            </div>
+            
+            <div class="photo-container">
+                <div class="photo-frame">
+                    <img id="currentPhoto" src="assets/pag1.jpeg" alt="Nuestro momento">
+                    <div class="photo-overlay">
+                        <div class="photo-text">
+                            <span id="photoCaption">Isa, sé que quizá estés mejor sin mí y que ni siquiera debería estar aquí, pero no puedo sacarte de la mente. Por más que lo intento, siempre estás tú en mis pensamientos y mis ojos no dejan de mirarte.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="photo-dots">
+                <span class="dot active" data-photo="0"></span>
+                <span class="dot" data-photo="1"></span>
+                <span class="dot" data-photo="2"></span>
+                <span class="dot" data-photo="3"></span>
+            </div>
+            
+            <!-- Botones finales (solo se muestran en la última imagen) -->
+            <div id="finalButtons" class="final-buttons hidden">
+                <button id="togetherForever" class="btn btn-primary">Juntos por siempre</button>
+                <button id="endStory" class="btn btn-secondary">Fin del cuento</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Efectos visuales -->
+    <div class="hearts-container"></div>
+    <div class="sparkles-container"></div>
+
+    <!-- Loader inicial -->
+    <div id="appLoader" class="loader hidden">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Cargando recuerdos...</p>
+        </div>
+    </div>
+
+    <!-- Overlay Rompecabezas -->
+    <div id="puzzleOverlay" class="puzzle-overlay hidden">
+        <div class="puzzle-stage">
+            <img class="puzzle-piece piece-1" src="assets/pag1.jpeg" alt="pieza 1">
+            <img class="puzzle-piece piece-2" src="assets/pag2.jpeg" alt="pieza 2">
+            <img class="puzzle-piece piece-3" src="assets/pag3.jpeg" alt="pieza 3">
+            <img class="puzzle-piece piece-4" src="assets/pag4.jpeg" alt="pieza 4">
+        </div>
+        <div class="puzzle-message hidden" id="puzzleMessage">Juntos podemos con todo. No dejemos que nada ni nadie nos separe.</div>
+    </div>
+
+    <!-- Overlay Despedida -->
+    <div id="farewellOverlay" class="farewell-overlay hidden">
+        <div class="farewell-message" id="farewellMessage">
+            Entiendo, sin nada más que decir, espero seas muy feliz. Nunca dejes de brillar, eres una gran persona y no dejes que todos los problemas o cosas que te pasen te hagan dejar de ser quien eres en verdad. Gracias por todo, y aunque me duele más que a ti, quiero que seas súper feliz, y si tu felicidad está sin mí, no hay alguna otra cosa que pueda hacer.
+        </div>
+        <div class="farewell-actions">
+            <button id="backToStartBtn" class="btn btn-primary">Volver al inicio</button>
+        </div>
+    </div>
+
+    <!-- Música romántica -->
+    <audio id="bgMusic" src="assets/music.mp3" preload="auto" loop></audio>
+    <div class="music-controls">
+        <button id="musicToggle" class="music-btn" aria-label="Reproducir/Pausar">♫</button>
+        <input id="musicVolume" class="music-volume" type="range" min="0" max="1" step="0.01" value="0.5" aria-label="Volumen" />
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
